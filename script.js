@@ -4,34 +4,54 @@ var totalRed = 0;
 var totalYellow = 0;
 var totalGreen = 0;
 var totalBlue= 0;
+
 $( document ).ready( function(){
-  console.log('JQ');
+  $('.color-button').on('click', function(){
+    console.log("working");
+    var colorButton = $(this).attr("data-color");
 
-$( document ).on('click', function(){
-  $("div").on("click", function() {
-    $(this).attr('data-color');
+  
+    if(colorButton === 'red'){
+     $('.container').append('<div class = "color-cube red"></div>');
+     totalRed++;
+     console.log("get total red:", totalRed);
+     $('#red').html('Total red :' + totalRed);
+    }
+    else if(colorButton === 'yellow'){
+      $('.container').append('<div class = "color-cube yellow"></div>');
+      totalYellow++;
+      console.log("get total yellow:", totalYellow);
+      $('#yellow').html('Total yellow :' + totalYellow);
+     }
+     else if(colorButton === 'green'){
+       $('.container').append('<div class = "color-cube green"></div>');
+       totalGreen++;
+       console.log("get total green:", totalGreen);
+       $('#green').html('Total green :' + totalGreen);
+      }
+      else if(colorButton === 'blue'){
+        $('.container').append('<div class = "color-cube blue"></div>');
+        totalBlue++;
+        console.log("get total blue:", totalBlue);
+        $('#blue').html('Total blue :' + totalBlue);
+       }
+
+    // <div class = 'color-cube red'></div>
+
+    // var $div = $('div/>')appendTo('body');
+    // $div.attr('data-color');
+    console.log("Get color", colorButton);
+
+    // var counter = $('#red').val();
+    // counter++ ;
+  });
 });
 
 
-
-
-var $div = $("<div>", {id: "red ", "class": "a"});
-var $div = $("<div>", {id: "yellow ", "class": "b"});
-var $div = $("<div>", {id: "green ", "class": "c"});
-var $div = $("<div>", {id: "blue ", "class": "d"});
-$div.click(function(){
-  if(i > 0){
-    //find way to increment color label 
-  }
-});
-$(".color-button").append($div);
-// var $el = $('<div/>', { 'data-color':" "});
-
-  // $( "p" ).html( ".attr( 'red' )");
-  // $( "p" ).html( ".attr( 'yellow' )");
-  // $( "p" ).html( ".attr( 'green' )");
-  // $( "p" ).html( ".attr( 'blue' )");
+// Append
+// $("button").click(function(){
+//     $("p").append("<b>Appended text</b>");
 // });
- // if( i > 0){
 //
-// }
+// var $div = $('<div />').appendTo('body');
+// $div.attr('id', 'holdy');
